@@ -1,0 +1,1 @@
+Assets folder readme for C# Unity project to make horror game.
