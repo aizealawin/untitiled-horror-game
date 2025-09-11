@@ -9,13 +9,17 @@ public class StarterScript : MonoBehaviour
     int myOtherNumber;
 
     [SerializeField] GameObject myGate;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+
     void Start()
     {
-
+        myNumber = 4;
+        myName = "Kusal";
+        myChoice = true;
+        myGate.SetActive(true);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
 
