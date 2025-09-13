@@ -13,7 +13,7 @@ public class StarterScript : MonoBehaviour
 
     void Start()
     {
-        myNumber = 3;
+        myNumber = 4;
 
 
     }
