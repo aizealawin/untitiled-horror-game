@@ -13,15 +13,23 @@ public class StarterScript : MonoBehaviour
 
     void Start()
     {
-        myNumber = 4;
-        myName = "Kusal";
-        myChoice = true;
-        myGate.SetActive(true);
+        myNumber = 3;
+
+
     }
 
 
     void Update()
     {
-
+        if (myNumber == 4 && myChoice == true)
+        {
+            myName = "Kusal";
+            myGate.SetActive(true);
+        }
+        else
+        {
+            myName = "Not Kusal";
+            myGate.SetActive(false);
+        }
     }
 }
