@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class StarterScript : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class StarterScript : MonoBehaviour
     [SerializeField] GameObject myGate;
     [SerializeField] GameObject name1;
     [SerializeField] GameObject name2;
+    [SerializeField] GameObject firstButton;
 
 
     void Start()
@@ -26,7 +29,7 @@ public class StarterScript : MonoBehaviour
         if (myNumber == 4 && myChoice == true)
         {
             myName = "Kusal";
-            myGate.SetActive(true);
+            // myGate.SetActive(true);
             name1.GetComponent<TMPro.TMP_Text>().text = $"My Number: {myNumber} My Name: {myName}";
             name2.GetComponent<TMPro.TMP_Text>().text = $"____________";
 
@@ -38,5 +41,19 @@ public class StarterScript : MonoBehaviour
             name2.GetComponent<TMPro.TMP_Text>().text = $"{myName} is active.";
             name1.GetComponent<TMPro.TMP_Text>().text = "I am stinky";
         }
+    }
+
+    public void OpenGate()
+    {
+        myGate.GetComponent<Animator>().Play("GateSwing", -1, 0f);
+    }
+
+    public void ChangeButtonState()
+    {
+        if (firstButton.activeSelf == true)
+        {
+            firstButton.SetActive(false);
+        }
+        else firstButton.SetActive(true);
     }
 }
