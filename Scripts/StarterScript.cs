@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -16,9 +17,15 @@ public class StarterScript : MonoBehaviour
     [SerializeField] GameObject firstButton;
 
 
+    [SerializeField] GameObject fadeIn;
+    [SerializeField] GameObject fadeOut;
+    [SerializeField] GameObject hiddenSphere;
+
+
     void Start()
     {
         myNumber = 4;
+        StartCoroutine(MySequence());
 
 
     }
@@ -55,5 +62,19 @@ public class StarterScript : MonoBehaviour
             firstButton.SetActive(false);
         }
         else firstButton.SetActive(true);
+    }
+
+    IEnumerator MySequence()
+    {
+        yield return new WaitForSeconds(0.5f);
+        fadeIn.SetActive(false);
+        myGate.GetComponent<Animator>().Play("GateSwing");
+        yield return new WaitForSeconds(4);
+        firstButton.SetActive(false);
+        yield return new WaitForSeconds(2);
+        hiddenSphere.SetActive(true);
+        yield return new WaitForSeconds(2);
+        fadeOut.SetActive(true);
+
     }
 }
