@@ -1,5 +1,6 @@
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -21,6 +22,7 @@ public class StarterScript : MonoBehaviour
     [SerializeField] GameObject fadeOut;
     [SerializeField] GameObject hiddenSphere;
 
+    [SerializeField] AudioSource ding;
 
     void Start()
     {
@@ -62,6 +64,11 @@ public class StarterScript : MonoBehaviour
             firstButton.SetActive(false);
         }
         else firstButton.SetActive(true);
+    }
+
+    public void PlayDing()
+    {
+        ding.Play();
     }
 
     IEnumerator MySequence()
