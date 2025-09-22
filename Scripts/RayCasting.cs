@@ -4,6 +4,7 @@ public class RayCasting : MonoBehaviour
 {
 
     public static float distanceFromTarget;
+    public static GameObject target;
     [SerializeField] float toTarget;
 
 
