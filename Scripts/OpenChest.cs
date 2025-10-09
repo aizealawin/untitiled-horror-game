@@ -28,10 +28,13 @@ public class OpenChest : MonoBehaviour
 
     private void OnInteract(InputAction.CallbackContext context)
     {
-        if (chestOpen == false && internalDistance < 2f)
+        if (RayCasting.target != null)
         {
-            chestOpen = true;
-            chest.GetComponent<Animator>().Play("OpenChest");
+            if (chestOpen == false && internalDistance < 2f && RayCasting.target.name == "Chest")
+            {
+                chestOpen = true;
+                chest.GetComponent<Animator>().Play("OpenChest");
+            }
         }
         Debug.Log("Pressed");
     }
