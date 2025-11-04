@@ -21,7 +21,7 @@ public class InteractionController : MonoBehaviour
         if (interactAction != null) interactAction.performed -= OnInteract;
     }
 
-    private void OnInteract(InputAction.CallbackContext ctx)
+    public void OnInteract(InputAction.CallbackContext ctx)
     {
         if (rayCaster == null) return;
 
