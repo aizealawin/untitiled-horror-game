@@ -23,19 +23,19 @@ public class OpenChest : MonoBehaviour
     }
     void Update()
     {
-        internalDistance = RayCasting.distanceFromTarget;
+        // internalDistance = RayCasting.CurrentTarget;
     }
 
     private void OnInteract(InputAction.CallbackContext context)
     {
-        if (RayCasting.target != null)
-        {
-            if (chestOpen == false && internalDistance < 2f && RayCasting.target.name == "Chest")
-            {
-                chestOpen = true;
-                chest.GetComponent<Animator>().Play("OpenChest");
-            }
-        }
-        Debug.Log("Pressed");
+        // if (RayCasting.target != null)
+        // {
+        //     if (chestOpen == false && internalDistance < 2f && RayCasting.target.name == "Chest")
+        //     {
+        //         chestOpen = true;
+        //         chest.GetComponent<Animator>().Play("OpenChest");
+        //     }
+        // }
+        // Debug.Log("Pressed");
     }
 }

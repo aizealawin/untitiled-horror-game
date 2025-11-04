@@ -1,10 +1,15 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RayCasting : MonoBehaviour
 {
 
-    public static float distanceFromTarget;
-    public static GameObject target;
+    [SerializeField] float distanceFromTarget;
+    [SerializeField] GameObject target;
+    public GameObject CurrentTarget => target;
+    public float CurrentDistance => distanceFromTarget;
+
+
     [SerializeField] float toTarget;
     [Header("Debug")]
     [SerializeField] bool showHitInConsole = false;
