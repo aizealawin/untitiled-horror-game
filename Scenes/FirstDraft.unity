@@ -1224,6 +1224,7 @@ GameObject:
   - component: {fileID: 1130483549}
   - component: {fileID: 1130483548}
   - component: {fileID: 1130483552}
+  - component: {fileID: 1130483553}
   m_Layer: 0
   m_Name: Cauldron
   m_TagString: Untagged
@@ -1334,9 +1335,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipes:
   - IngredientIds:
-    - red_mushroom
     - blue_moss
+    - red_mushroom
     resultName: Potion of Growth
+--- !u!114 &1130483553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130483547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcef1a107edf140d29e92f24527121c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 155955857}
+  cauldron: {fileID: 1130483552}
+  acceptedDefs:
+  - {fileID: 11400000, guid: bf376eee8d3f5428faa6cbc81e28d822, type: 2}
+  - {fileID: 11400000, guid: 9e7cc0ab772494bdab2a3310fd0faa7f, type: 2}
+  - {fileID: 11400000, guid: 753eaebb2fc034996b55f103d916fb46, type: 2}
+  - {fileID: 11400000, guid: aca4abbb8b3dd400baa46d7a156264ee, type: 2}
+  allowedRange: 2
 --- !u!1 &1209335357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,6 +1507,10 @@ PrefabInstance:
     - target: {fileID: 8616685848737228376, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616685848737228376, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228382, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Enabled

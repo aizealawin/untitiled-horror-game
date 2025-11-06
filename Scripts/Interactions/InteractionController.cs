@@ -12,16 +12,14 @@ public class InteractionController : MonoBehaviour
     void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-        interactAction = playerInput.actions["Interact"];
-        interactAction.performed += OnInteract;
     }
 
-    void OnDestroy()
+    public void OnInteract(UnityEngine.InputSystem.InputValue value)
     {
-        if (interactAction != null) interactAction.performed -= OnInteract;
+        HandleInteract();
     }
 
-    public void OnInteract(InputAction.CallbackContext ctx)
+    private void HandleInteract()
     {
         if (rayCaster == null) return;
 
